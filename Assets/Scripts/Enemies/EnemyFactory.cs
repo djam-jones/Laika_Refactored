@@ -36,12 +36,12 @@ public class EnemyFactory : MonoBehaviour
             switch (type)
             {
                 case 1: // Air
-                    selectedEnemy = enemies[1];
+                    selectedEnemy = enemies[0];
                     spawnLoc = new Vector3(this.transform.position.x, Random.Range(minSpawnHeight, maxSpawnHeight), 0);
                     break;
                 case 2: // Ground
-                    selectedEnemy = enemies[0];
-                    spawnLoc = new Vector3(this.transform.position.x, 0, 0);
+                    selectedEnemy = enemies[1];
+					spawnLoc = new Vector3(this.transform.position.x, this.transform.position.y, 0);
                     break;
             }
             Instantiate(selectedEnemy, spawnLoc, Quaternion.identity);
